@@ -45,8 +45,8 @@ func (c *Client) OpenSession(ctx context.Context) (*Session, error) {
 	req := cli_service.TOpenSessionReq{
 		ClientProtocol: cli_service.TProtocolVersion_HIVE_CLI_SERVICE_PROTOCOL_V7,
 		Configuration:  cfg,
-		Username:		&cli.opts.Username,
-		Password:		&cli.opts.Password,
+		Username:		&c.opts.Username,
+		Password:		&c.opts.Password,
 	}
 
 	resp, err := c.client.OpenSession(ctx, &req)
