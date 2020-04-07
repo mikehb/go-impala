@@ -227,6 +227,8 @@ func connect(opts *Options) (*Conn, error) {
 		MaxRows:  int64(opts.BatchSize),
 		MemLimit: opts.MemoryLimit,
 		QueryTimeout: opts.QueryTimeout,
+		Username: opts.Username,
+		Password: opts.Password,
 	})
 
 	return &Conn{client: client, t: transport, log: logger}, nil
